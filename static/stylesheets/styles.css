@@ -1,12 +1,21 @@
 :root {
   --white: rgb(218, 212, 212);
-  --white-ish: rgba(233, 232, 232, 0.87);
-  --black-ish: rgb(56, 54, 54);
 }
 
 body {
   margin: 0px;
   font-family: raleway;
+  background-color: white;
+}
+
+.feather {
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 nav {
@@ -18,14 +27,15 @@ nav {
   height: 40px;
 }
 
-.feather {
-  width: 32px;
-  height: 32px;
-  stroke: currentColor;
-  stroke-width: 1.25;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
+.darkmode {
+  /* Toggles to nightmode */
+  background-color: black;
+  color: white;
+}
+
+.lightmode {
+  background-color: black;
+  color: white;
 }
 
 .darkmode-icon {
@@ -47,11 +57,14 @@ nav {
 }
 
 .navbar-item:hover {
-  background-color: var(--white-ish);
+  background-color: var(--placeholder);
 }
 
 .navbar-item, .navbar-item:visited, .navbar-item:active {
-  color: var(--black-ish);
+  text-decoration: none;
+}
+
+.post-item-title, .post-item-title:visited, .post-item-title:active {
   text-decoration: none;
 }
 

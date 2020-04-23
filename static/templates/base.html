@@ -9,13 +9,13 @@
   
   <body>
 
-    <nav>
+    <nav id="navbar">
       <span class="navbar-container">
         <a class="navbar-item" href="/">Eric Ng</a>
         <a style="margin-right: 10px"> | </a>
         <a class="navbar-item" href="/">Home</a>
         <a class="navbar-item" href="/posts.html">Blog</a>
-        <i class="navbar-item darkmode-icon" data-feather="sun"></i>
+        <i id="toggle-dark" class="navbar-item darkmode-icon" data-feather="sun"></i>
       </div>
     </nav>
  
@@ -25,6 +25,14 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
       feather.replace()
+
+      let toggleDark = document.getElementById("toggle-dark")
+      toggleDark.addEventListener("click", () => {
+        let body = document.body;
+        body.classList.toggle("darkmode");
+        console.log("button is clicked")
+      })
+
     </script>
   </body>
 </html>
