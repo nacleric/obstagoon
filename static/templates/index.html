@@ -5,19 +5,12 @@
   <!-- Intro -->
   <div class="banner">
     <div class="banner-img-border"></div>
-    <h1 class="banner-title">Your name here</h1>
-    <p class="banner-text">Hey this is my nuzlocke page, you can keep track of all my nuzlocke runs here</p>
-  </div>
-
-  <div class="team">
-    <h1 class="team-title">Current Team:</h1>
-    <div class="team-section">
-    {% for pokemon in pokemons %}
-      <div class="team-section-box">
-        <img class="team-section-box-asset" src="{{ pokemon.asset_location }}">
-        <p class="team-section-box-nickname">{{ pokemon.nickname }}</p>
-      </div>
-    {% endfor %}
+    <div class="banner-icons">
+      <i class="banner-icon" data-feather="github"></i>
+      <i class="banner-icon" data-feather="linkedin"></i>
+      <i class="banner-icon" data-feather="twitter"></i>
     </div>
+    <h1 class="banner-title">Your name here</h1>
+    <p class="banner-text">ongue dapibus. In finibus, justo ac semper vulputate, velit magna lobortis sapien, a sagittis mi risus eget mauris. Donec at nibh nec nisi semper auctor. Donec suscipit sapien eu pretium posuere. Curabitur risus magna, laoreet a luctus non, iaculis sit amet metus. </p>
   </div>
 {% endblock %}

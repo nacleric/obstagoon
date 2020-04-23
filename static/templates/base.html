@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nuzlocke-ssg</title>
+    <title>Eric Ng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="https://unpkg.com/bulmaswatch/default/bulmaswatch.min.css">-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway&family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="/static/stylesheets/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
   </head>
-
+  
   <body>
-    <!-- Navbar -->
-    <div class="nav">
-      <a class="nav-item" href="/">Home</a>
-      <a class="nav-item" href="/pokemon_list.html">Morgue</a>
-      <a class="nav-item" href="/posts.html">List of Runs</a>
-    </div>
+
+    <nav>
+      <span class="navbar-container">
+        <a class="navbar-item" href="/">Eric Ng</a>
+        <a style="margin-right: 10px"> | </a>
+        <a class="navbar-item" href="/">Home</a>
+        <a class="navbar-item" href="/posts.html">Blog</a>
+        <i class="navbar-item darkmode-icon" data-feather="sun"></i>
+      </div>
+    </nav>
  
-    <div class="container">
+    <div class="jinja-container">
       {% block content %}{% endblock %}
     </div>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace()
+    </script>
   </body>
 </html>

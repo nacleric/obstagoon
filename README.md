@@ -1,14 +1,14 @@
-##Nuzlocke-SSG
+## Nuzlocke-SSG
 A Static site generator for nuzlocke challenges
 
-##TODO:
-####[Important]
+## TODO:
+#### [Important]
 - Make templates nicer (in progress)
 
-####[Not Important]
+#### [Not Important]
 - Might add support for M/F sprites (probably not, this might require separating folders)
 
-####[Recently Finished]
+#### [Recently Finished]
 - Copy sprite assets to build folder
     -Ideas: revamp sprite_dl. Instead of download to content folder download directly to build
     folder. Or giv the option to target of specific folder in the configs (nah this was dumb
@@ -19,7 +19,7 @@ A Static site generator for nuzlocke challenges
 - Fix templates when it hits 490 pixels width
 - Fix titles in posts.html
 
-####[Possible variable name changes]
+#### [Possible variable name changes]
 - change generate to "build" in functions
 - Change index.html to just index.html [cant search and replace]
 - change pokemon_list.html -> pokemon_list.html [cant search and replace]
