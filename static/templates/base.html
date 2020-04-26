@@ -6,13 +6,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/stylesheets/styles.css">
     <script>
-      document.addEventListener('DOMContentLoaded', (event) => {
-        let body = document.body;
-        if (localStorage.getItem("isDark") === "true") {
-          body.classList.add("darkmode")
-          console.log("yeet")
-        }
-      })
+      let html = document.documentElement;
+      if (localStorage.getItem("isDark") === "true") {
+        html.setAttribute('data-theme', 'dark');
+      }
     </script>
   </head>
 
@@ -37,15 +34,15 @@
 
       let toggleDark = document.getElementById("toggle-dark")
       toggleDark.addEventListener("click", () => {
-        let body = document.body;
+        let html = document.documentElement;
         if (localStorage.getItem("isDark") === null) {
-          body.classList.add("darkmode");
+          html.setAttribute('data-theme', 'dark');
           localStorage.setItem("isDark", "true")
         } else if (localStorage.getItem("isDark") === "false") {
-          body.classList.add("darkmode");
+          html.setAttribute('data-theme', 'dark');
           localStorage.setItem("isDark", "true")
         } else if (localStorage.getItem("isDark") === "true") {
-          body.classList.remove("darkmode")
+          html.setAttribute('data-theme', 'light');
           localStorage.setItem("isDark", "false")
         }
       })

@@ -1,15 +1,24 @@
 :root {
-  --white: rgb(218, 212, 212);
+  --white: rgb(252, 252, 252);
   --dark: hsl(213, 33%, 21%);
-  --green: hsl(141, 53%, 53%);
   --red: hsl(358, 100%, 67%);
+}
+
+html, html[data-theme="light"] {
+  --background-color: rgb(252, 252, 252);
+  --text-color: hsl(213, 33%, 21%);
+}
+
+html[data-theme="dark"] {
+  --background-color: hsl(213, 33%, 21%);
+  --text-color: rgb(252, 252, 252);
 }
 
 body {
   margin: 0px;
   font-family: raleway;
-  background-color: white;
-  /* transition: background 1s ease-in, color 1s ease-in; */
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 a {
@@ -17,7 +26,6 @@ a {
 }
 
 nav {
-  /* background-color: black; */
   position: sticky;
   display: flex;
   justify-content: flex-start;
@@ -27,7 +35,7 @@ nav {
 
 ::selection {
   background: var(--red);
-  color: white;
+  color: var(--white);
 }
 
 .feather {
@@ -40,18 +48,8 @@ nav {
   fill: none;
 }
 
-.is-green {
-  color: var(--green);
-}
-
 .is-red{
   color: var(--red);
-}
-
-.darkmode {
-  /* Toggles to nightmode */
-  background-color: var(--dark);
-  color: white;
 }
 
 .darkmode-icon {
