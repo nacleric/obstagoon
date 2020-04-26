@@ -40,6 +40,7 @@ def generate_posts(c: Config) -> None:
     class PostToken(NamedTuple):
         title: str
         date: str
+        intro: str
         filename: str
         file_location: str
 
@@ -64,9 +65,12 @@ def generate_posts(c: Config) -> None:
         soup = BeautifulSoup(content, "html.parser")
         soup_title = soup.find("div", class_="title").get_text()
         soup_date = soup.find("div", class_="subtitle").get_text()
+        # add to nuzlocke-ssg
+        soup_intro = soup.find("div", class_="intro").get_text()
         post_token = PostToken(
             title=soup_title,
             date=soup_date,
+            intro=soup_intro,
             filename=file,
             file_location=f"/posts/{file}",
         )
@@ -101,6 +105,7 @@ def new_post(c: Config) -> None:
             f"<!-- Don't channge the classes or delete these -->\n"
             f"<div class='title'>Insert title here</h1>\n"
             f"<div class='subtitle'>{current_date}</div>\n"
+            f"<div class='intro'>Insert intro here</div>\n"
         )
 
 

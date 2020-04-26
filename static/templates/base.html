@@ -3,10 +3,19 @@
   <head>
     <title>Eric Ng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway&family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/stylesheets/styles.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        let body = document.body;
+        if (localStorage.getItem("isDark") === "true") {
+          body.classList.add("darkmode")
+          console.log("yeet")
+        }
+      })
+    </script>
   </head>
-  
+
   <body>
 
     <nav id="navbar">
@@ -18,7 +27,7 @@
         <i id="toggle-dark" class="navbar-item darkmode-icon" data-feather="sun"></i>
       </div>
     </nav>
- 
+
     <div class="jinja-container">
       {% block content %}{% endblock %}
     </div>
@@ -29,10 +38,17 @@
       let toggleDark = document.getElementById("toggle-dark")
       toggleDark.addEventListener("click", () => {
         let body = document.body;
-        body.classList.toggle("darkmode");
-        console.log("button is clicked")
+        if (localStorage.getItem("isDark") === null) {
+          body.classList.add("darkmode");
+          localStorage.setItem("isDark", "true")
+        } else if (localStorage.getItem("isDark") === "false") {
+          body.classList.add("darkmode");
+          localStorage.setItem("isDark", "true")
+        } else if (localStorage.getItem("isDark") === "true") {
+          body.classList.remove("darkmode")
+          localStorage.setItem("isDark", "false")
+        }
       })
-
     </script>
   </body>
 </html>
