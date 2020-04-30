@@ -1,12 +1,8 @@
-## Nuzlocke-SSG
-A Static site generator for nuzlocke challenges
+## Obstagoon
+A general purpose blog generator
 
 ## TODO:
-#### [Important]
-- Make templates nicer (in progress)
-
-#### [Not Important]
-- Might add support for M/F sprites (probably not, this might require separating folders)
+- work on content.html
 
 #### [Recently Finished]
 - Copy sprite assets to build folder
@@ -18,8 +14,4 @@ A Static site generator for nuzlocke challenges
 - Create a function that deletes Posts before build (might not need this)
 - Fix templates when it hits 490 pixels width
 - Fix titles in posts.html
-
-#### [Possible variable name changes]
-- change generate to "build" in functions
-- Change index.html to just index.html [cant search and replace]
-- change pokemon_list.html -> pokemon_list.html [cant search and replace]
+- Make templates nicer (good enough but needs detail)

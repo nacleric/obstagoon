@@ -6,7 +6,7 @@
     {% for post in posts %}
       <div class="posts-item">
         <a href="{{ post.file_location }}" class="posts-item-title"> {{ post.title }} </a>
-        <p class="posts-item-intro"> {{ post.intro }} <a class="is-red" href="{{ post.file_location }}">[Read More]</a></p>
+        <p class="posts-item-intro"> {{ post.intro }} <a style="color: var(--coralred)" href="{{ post.file_location }}">[Read More]</a></p>
       </div>
       <hr>
     {% endfor %}

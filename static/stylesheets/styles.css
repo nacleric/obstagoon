@@ -1,17 +1,19 @@
 :root {
-  --white: rgb(252, 252, 252);
+  --white: hsl(0, 0%, 99%);
   --dark: hsl(213, 33%, 21%);
-  --red: hsl(358, 100%, 67%);
+  --coralred: hsl(358, 100%, 67%);
 }
 
 html, html[data-theme="light"] {
   --background-color: rgb(252, 252, 252);
   --text-color: hsl(213, 33%, 21%);
+  --text-color-fade: hsla(213, 33%, 21%, 0.900);
 }
 
 html[data-theme="dark"] {
   --background-color: hsl(213, 33%, 21%);
-  --text-color: rgb(252, 252, 252);
+  --text-color: hsl(0, 0%, 99%);
+  --text-color-fade: hsl(0, 0%, 99%, 0.800);
 }
 
 body {
@@ -34,7 +36,7 @@ nav {
 }
 
 ::selection {
-  background: var(--red);
+  background: var(--coralred);
   color: var(--white);
 }
 
@@ -49,7 +51,7 @@ nav {
 }
 
 .is-red{
-  color: var(--red);
+  color: var(--coralred);
 }
 
 .darkmode-icon {
@@ -71,7 +73,7 @@ nav {
 
 .navbar-item:hover {
   text-decoration: underline;
-  color: var(--red);
+  color: var(--coralred);
 }
 
 .navbar-item, .navbar-item:visited, .navbar-item:active {
@@ -83,13 +85,21 @@ nav {
 }
 
 .jinja-container {
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 40px;
 }
 
 .banner {
   padding-bottom: 10px;
+}
+
+.banner-img {
+  margin-left: auto;
+  margin-right: auto;
+  height: 110%;
+  width: auto;
+  border-radius: 50%; 
 }
 
 .banner-img-border {
@@ -98,18 +108,18 @@ nav {
   margin-right: auto;
   height: 200px;
   width: 200px;
-  background-color: #bbb;
   border-radius: 50%;
   border-style: solid;
-  border-color: var(--red);
-  display: block;
+  border-color: var(--coralred);
+  display: flex;
+  justify-content: center;
 }
 
 .banner-icons {
   display: flex;
   justify-content: space-around;
-  margin-top: 16px;
-  margin-bottom: 32px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   width: 200px;
@@ -125,8 +135,10 @@ nav {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.1rem;
+  justify-content: center;
+  font-size: 1.25rem;
   width: 70%;
+  color: var(--text-color-fade);
 }
 
 .posts-section {
@@ -149,18 +161,36 @@ nav {
 .posts-item-intro {
   font-family: raleway;
   font-size: 1.1rem;
+  color: var(--text-color-fade);
 }
 
 .content-section {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  font-size: 1.5rem;
+}
+
+.title {
+  font-family: lato;
+  font-size: 3.5rem;
+}
+
+.date {
+  font-family: lato;
+  font-size: 1rem !important;
+}
+
+.intro {
+  margin-top: 30px;
+  font-size: 1.5rem;
 }
 
 /* Responsive */
 @media all and (max-width: 800px) {
   body {
-    color: red;
+    /* color: red; */
+    margin: 0px;
   }
 
   .navbar-container {
@@ -169,11 +199,23 @@ nav {
   }
 
   .jinja-container {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 1px;
+    margin-right: 1px;
   }
 
   .banner-text {
-    width: 100%;
+    width: 90%;
+  }
+
+  .content-section {
+    font-size: 1.1rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+  
+  .date {
+    font-size: 1rem;
   }
 }

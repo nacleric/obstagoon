@@ -64,7 +64,7 @@ def generate_posts(c: Config) -> None:
 
         soup = BeautifulSoup(content, "html.parser")
         soup_title = soup.find("div", class_="title").get_text()
-        soup_date = soup.find("div", class_="subtitle").get_text()
+        soup_date = soup.find("div", class_="date").get_text()
         # add to nuzlocke-ssg
         soup_intro = soup.find("div", class_="intro").get_text()
         post_token = PostToken(
@@ -103,8 +103,8 @@ def new_post(c: Config) -> None:
     with open(f"{c.CONTENT_POST_DIR}/{datetime_obj}.html", "w") as f:
         f.write(
             f"<!-- Don't channge the classes or delete these -->\n"
-            f"<div class='title'>Insert title here</h1>\n"
-            f"<div class='subtitle'>{current_date}</div>\n"
+            f"<div class='title'>Insert title here</div>\n"
+            f"<div class='date'>{current_date}</div>\n"
             f"<div class='intro'>Insert intro here</div>\n"
         )
 
