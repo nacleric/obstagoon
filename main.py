@@ -65,7 +65,6 @@ def generate_posts(c: Config) -> None:
         soup = BeautifulSoup(content, "html.parser")
         soup_title = soup.find("div", class_="title").get_text()
         soup_date = soup.find("div", class_="date").get_text()
-        # add to nuzlocke-ssg
         soup_intro = soup.find("div", class_="intro").get_text()
         post_token = PostToken(
             title=soup_title,

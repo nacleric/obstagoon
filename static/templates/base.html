@@ -14,7 +14,6 @@
   </head>
 
   <body>
-
     <nav id="navbar">
       <span class="navbar-container">
         <a class="navbar-item" href="/">Obstagoon</a>
@@ -23,12 +22,13 @@
         <a class="navbar-item" href="/posts.html">Blog</a>
         <a class="navbar-item" href="#">Resume</a>
         <i id="toggle-dark" class="navbar-item darkmode-icon" data-feather="sun"></i>
-      </div>
+      </span>
     </nav>
 
     <div class="jinja-container">
       {% block content %}{% endblock %}
     </div>
+
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
       feather.replace()
@@ -48,5 +48,6 @@
         }
       })
     </script>
+
   </body>
 </html>
