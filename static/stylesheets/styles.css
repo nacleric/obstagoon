@@ -8,12 +8,16 @@ html, html[data-theme="light"] {
   --background-color: rgb(252, 252, 252);
   --text-color: hsl(213, 33%, 21%);
   --text-color-fade: hsla(213, 33%, 21%, 0.900);
+  --opposite-background-color: hsl(213, 33%, 21%);
+  --opposite-text-color: rgb(252, 252, 252);
 }
 
 html[data-theme="dark"] {
   --background-color: hsl(213, 33%, 21%);
   --text-color: hsl(0, 0%, 99%);
   --text-color-fade: hsl(0, 0%, 99%, 0.800);
+  --opposite-background-color: rgb(252, 252, 252);
+  --opposite-text-color: hsl(213, 33%, 21%);
 }
 
 body {
