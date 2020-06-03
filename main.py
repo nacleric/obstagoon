@@ -15,6 +15,7 @@ def build(c: Config) -> None:
     generate_index(c)
     generate_posts(c)
     generate_styles(c)
+    generate_scripts(c)
 
 
 def generate_index(c: Config) -> None:
@@ -96,6 +97,20 @@ def generate_styles(c: Config) -> None:
             f.write(css_file)
 
 
+def generate_scripts(c: Config) -> None:
+    """ Parses stylesheets in ./static and writes to ./build/scripts"""
+    scripts_folder = os.listdir(c.SCRIPTS_DIR)
+    for file in scripts_folder:
+        # Reads scripts from static folder
+        with open(f"{c.SCRIPTS_DIR}/{file}", "r") as f:
+            script_file = f.read()
+
+        # Writes into Build folder
+        with open(f"{c.BUILD_DIR}/static/scripts/{file}", "w") as f:
+            print("[LOG] Copying scripts to build folder…")
+            f.write(script_file)
+
+
 def new_post(c: Config) -> None:
     datetime_obj = datetime.now()
     current_date = datetime_obj.strftime("%m-%d-%Y")
@@ -130,6 +145,7 @@ def main() -> None:
             os.mkdir(f"{config.BUILD_DIR}/posts")
             os.mkdir(f"{config.BUILD_DIR}/static")
             os.mkdir(f"{config.BUILD_DIR}/static/stylesheets")
+            os.mkdir(f"{config.BUILD_DIR}/static/scripts")
         build(config)
     elif args.command == "newpost":
         new_post(config)

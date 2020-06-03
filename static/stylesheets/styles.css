@@ -21,6 +21,7 @@ body {
   font-family: raleway;
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: all 0.2s;
 }
 
 a {

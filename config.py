@@ -9,6 +9,7 @@ class Config:
     IMAGE_DIR = "./static/img"
     TEMPLATE_DIR = "./static/templates"
     CSS_DIR = "./static/stylesheets"
+    SCRIPTS_DIR = "./static/scripts"
 
     # Jinja environment variable
     JINJA_ENV = Environment(
